@@ -1,6 +1,8 @@
 # Comunicado técnico diario / Daily technical communiqué
 
-Última actualización: 2020-03-15 T 21:58:00-06:00 
+[Listado](https://www.gob.mx/salud/documentos/informacion-internacional-y-nacional-sobre-nuevo-coronavirus-2019-ncov)
+
+Última actualización: 2020-03-15 T 21:58:00-06:00
 
 | Fecha               | Link        |
 | ------------------- | ----------  |
