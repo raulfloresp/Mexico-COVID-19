@@ -1,4 +1,4 @@
-# Comunicado técnico diario / Daily technical communique
+# Comunicado técnico diario / Daily technical communiqué
 
 Última actualización: 2020-03-15 T 21:58:00-06:00 
 
