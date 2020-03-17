@@ -1,5 +1,7 @@
 # Base de datos de casos de COVID-19 reportados en México / Database of reported cases of COVID-19 in Mexico.
 
+Última actualización/Last update: 2020-03-16 T 22:30-06:00
+
 ## Español
 Información de casos de COVID-19 dada a conocer por el Gobierno Federal de México desglosada por entidad.
 
