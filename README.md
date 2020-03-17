@@ -25,5 +25,5 @@ The cases are grouped by in three cases:
 ¡Cualquier contribución  es bienvenida! 
 Contacto: carranco[punto]sga[arroba]ciencias[punto]unam[punto]mx
 
-Any contrution is welcome!
-Contact: carranco[dot]sga[at]ciencias[dot]unam[dot]mx.
+Any contribution is welcome!
+Contact: carranco[dot]sga[at]ciencias[dot]unam[dot]mx
