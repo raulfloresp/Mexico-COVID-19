@@ -1,5 +1,9 @@
 # Avisos epidemiologicos / Epidemiological notices
 
+Última actualización: 2020-03-19 T 13:05:00-06:00 
+
 Archivos relacionados a avisos epidemiológicos de la Secretaría de Salud del gobierno federal. [Link](https://www.gob.mx/salud/documentos/aviso-epidemiologico-casos-de-infeccion-respiratoria-asociados-a-nuevo-coronavirus-2019-ncov)
 
-Última actualización: 2020-03-15 T 18:20:00-06:00 
+Files related to epidemiological notices of the Heath Secretariat of the federal government.  [Link](https://www.gob.mx/salud/documentos/aviso-epidemiologico-casos-de-infeccion-respiratoria-asociados-a-nuevo-coronavirus-2019-ncov)
+
+
