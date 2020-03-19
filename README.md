@@ -10,10 +10,10 @@ La información es extraída de los Comunicados Técnicos Diarios (CTD) publicad
 Los datos por día y estado están contenidos en ```Mexico_COVID19.ods```. Un archivo ```.csv``` con datos idénticos se proporciona por conveniencia.
 Las columnas están nombradas de acuerdo al siguiente formato: ```EDO_{key}```. ```EDO``` es el código ISO de tres letras del estado. ```key``` puede tener los siguientes valores:
 
-- ```I```: representa el número de casos confirmados(*) importados del extranjero al estado.
+- ```I```: representa el número de casos confirmados(°) importados del extranjero al estado.
 - ```L```: representa el número de casos confirmados locales dados en el estado.
 - *ninguno*: representa el número total de casos confirmados en el estado.
-- ```R```: representa el número total de casos confirmados recuperados(**) en el estado.
+- ```R```: representa el número total de casos confirmados recuperados(°°) en el estado.
 
 Adicionalmente,  se tienen las siguientes columnas:
  
@@ -24,13 +24,13 @@ Adicionalmente,  se tienen las siguientes columnas:
 - ```Pos_rep```: es el número total de casos confirmados en el país, independientemente de su origen, reportados oficialmente. ( *Confirmados* en el CTD.)
 - ```Susp_rep```: es el número total de casos sospechosos en el país, reportados oficialmente. ( *Sospechosos* en el CTD.)
 - ```Neg_rep```: es el número total de casos descartados (por laboratorio) en el país, reportados oficialmente. ( *Negativos* en el CTD.)
-- ```IRAG_Test```: es el número total de muestras de pacientes al azar(***) cuya muestra fue analizada en busca de SARS-CoV-2. (Reportado en el CTD a partir del 25 de febrero, anunciado el 23 de febrero.)
+- ```IRAG_Test```: es el número total de muestras de pacientes al azar(°°°) cuya muestra fue analizada en busca de SARS-CoV-2. (Reportado en el CTD a partir del 25 de febrero, anunciado el 23 de febrero.)
 - ```Tested_total```: es el número total de pruebas realizadas en el país, según datos oficiales. (Suma de las columnas ```Pos```, ```Susp_rep```, ```Neg_rep``` e ```IRAG_Test```.)
 - ```Recovered```: es el número total de casos confirmados recuperados en el país. (Suma de las columnas ```EDO_R```.)
 
-(*) Caso confirmado consiste en un paciente cuya muestra resultó positiva a la búsqueda de SARS-CoV-2. (No es del todo claro en los datos oficiales si estos incluyen el caso de portadores que se mencionan en los CTD. El incremento en las cifras (y el listado del primer portador en la lista de casos oficiales) parece sugerir que sí es el caso.)
-(**) Caso recuperado consiste en un paciente que no presenta sintomatología y cuya segunda muestra ha dado negativo a la presencia de SARS-CoV-2.
-(***) Pacientes no sospechosos de COVID-19 (i.e. que visitaron un país con tranmisión comunitaria activa y presentan sintomatología o que son contactos de pacientes con COVID-19) con sintomatología de enfermedad respiratoria aguda de etiología desconocida analizada al azar para detección de SARS-CoV-2.
+(°) Caso confirmado consiste en un paciente cuya muestra resultó positiva a la búsqueda de SARS-CoV-2. (No es del todo claro en los datos oficiales si estos incluyen el caso de portadores que se mencionan en los CTD. El incremento en las cifras (y el listado del primer portador en la lista de casos oficiales) parece sugerir que sí es el caso.)
+(°°) Caso recuperado consiste en un paciente que no presenta sintomatología y cuya segunda muestra ha dado negativo a la presencia de SARS-CoV-2.
+(°°°) Pacientes no sospechosos de COVID-19 (i.e. que visitaron un país con tranmisión comunitaria activa y presentan sintomatología o que son contactos de pacientes con COVID-19) con sintomatología de enfermedad respiratoria aguda de etiología desconocida analizada al azar para detección de SARS-CoV-2.
 
 ### Notas:
 
@@ -49,10 +49,10 @@ The data by day and state are contained in ```Mexico_COVID19.ods```. A ```.csv``
 
 The columns are named according to the following format: ```EDO_{key}```. ```EDO``` is the three-letter ISO code for the state. ```key``` takes the following values:
 
-- ```I```: represents the number of confirmed(*) cases, imported from abroad to the state.
+- ```I```: represents the number of confirmed(°) cases, imported from abroad to the state.
 - ```L```: represents the number of confirmed local cases in the state.
 - *none*: represents the total number of cases in the state.
-- ```R```: represents the number of confirmed cases that have recovered(**) in the state.
+- ```R```: represents the number of confirmed cases that have recovered(°°) in the state.
 
 Aditionally, we have the following columns:
  
@@ -63,13 +63,13 @@ Aditionally, we have the following columns:
 - ```Pos_rep```: is the total number of officially reported confirmed cases in the country, independent of their origin. ( *Confirmados* in the CTD.)
 - ```Susp_rep```: is the total number of officially suspected cases in the country. ( *Sospechosos* in the CTD.)
 - ```Neg_rep```: is the total number of officially discarded (negative lab test) cases in the country. ( *Negativos* in the CTD.)
-- ```IRAG_Test```: is the total number of samples from random patients(*) whose sample was tested for SARS-CoV-2. (Reported in the CTD from February 25 onwards, announced on February 23.)
+- ```IRAG_Test```: is the total number of samples from random patients(°°°) whose sample was tested for SARS-CoV-2. (Reported in the CTD from February 25 onwards, announced on February 23.)
 - ```Tested_total```: is the total number of tests done in the country, according to official data. (Sum of the ```Pos```, ```Susp_rep```, ```Neg_rep``` and ```IRAG_Test``` columns.)
 - ```Recovered```: is the total number of confirmed recovered cases in the country. (Sum of the ```EDO_R``` columns.)
 
-(*) A confirmed case consists in a patient whose sample tested positive for SARS-CoV-2. (It isn't fully clear in the official data if these numbers contain asymptomatic carriers (*portadores*) mentioned in the CTD. The increase in the numbers (and that the first carrier was listed in the official case list) suggests the numbers do reflect the mentioned carriers.)
-(**) A recoverde case consists in a patient that no longer displays symptoms and whose second sample has tested negative for SARS-CoV-2.
-(***) Non-suspicious patients for COVID-19 (i.e. that visited a country with active community transmission and present symptoms or that are contacts of patients with COVID-19) with acute respiratory illness with unknown etiology randomly screened for SARS-CoV-2.
+(°) A confirmed case consists in a patient whose sample tested positive for SARS-CoV-2. (It isn't fully clear in the official data if these numbers contain asymptomatic carriers (*portadores*) mentioned in the CTD. The increase in the numbers (and that the first carrier was listed in the official case list) suggests the numbers do reflect the mentioned carriers.)
+(°°) A recovered case consists in a patient that no longer displays symptoms and whose second sample has tested negative for SARS-CoV-2.
+(°°°) Non-suspicious patients for COVID-19 (i.e. that visited a country with active community transmission and present symptoms or that are contacts of patients with COVID-19) with acute respiratory illness with unknown etiology randomly screened for SARS-CoV-2.
 
 ### Notes:
 
