@@ -4,6 +4,8 @@
 
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 Information of the mexican hospitalary system [here](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
+Dataset de latinoamética [aquí](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica). 
+Latin american dataset [here](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
 
 ## Español
 Información de casos de COVID-19 dada a conocer por el Gobierno Federal de México desglosada por entidad.
