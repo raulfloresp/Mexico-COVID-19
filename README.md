@@ -2,13 +2,21 @@
 
 Última actualización/Last update: 2020-03-23 T 19:40:00-06:00
 
-**Nota/Note:** Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
-**No particular patient status will be updated after 2020-03-24**
+**Nota/Note:** 
+Los casos recuperados ya no se listan en el CTD desde el 2020-03-23.
+**La situación de cada paciente (recuperado/fallecido) no será actualizada a partir del 2020-03-23.**
+
+Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
+***No* particular patient status (recovered/deceased) will be updated after 2020-03-23.**
 
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 Information of the mexican hospitalary system [here](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
+
 Dataset de latinoamética [aquí](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
 Latin american dataset [here](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
+
+Visualización de los datos reportados por Joel Ricci-López (@jRicciL) [aqui](https://joelricci.shinyapps.io/covid_mx_jrl/).
+Visualization of the reported data by Joel Ricci-López (@jRicciL) [here](https://joelricci.shinyapps.io/covid_mx_jrl/).
 
 ## Español
 Información de casos de COVID-19 dada a conocer por el Gobierno Federal de México desglosada por entidad.
