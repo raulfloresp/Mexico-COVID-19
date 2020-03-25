@@ -2,7 +2,8 @@
 
 Última actualización/Last update: 2020-03-23 T 19:40:00-06:00
 
-**Nota/Note:** Recovered cases are not provided in the CTD for 2020-03-23.
+**Nota/Note:** Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
+**No particular patient status will be updated after 2020-03-24**
 
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 Information of the mexican hospitalary system [here](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).

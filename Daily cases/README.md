@@ -1,10 +1,11 @@
 # Casos diarios / Daily cases
 
-Última actualización: 2020-03-21 T 19:45:00-06:00
+Última actualización: 2020-03-24 T 19:40:00-06:00
 
 ## Español
 
 Listado de casos confirmados por día, con edad, inicio de sintomatología y tipo de caso (confirmado/recuperado/fallecido; importado/contacto).
+**Nota: El estado particular del paciente (recuperado/fallecido) ya no se reportará a partir del 24 de marzo.**
 La listas están disponibles del 13 de marzo en adelante (°) debido a que las tablas de días anteriores no están disponibles actualmente.
 
 Un trabajo similar está disponible [aquí](https://github.com/guzmart/covid19_mex).
@@ -14,6 +15,7 @@ Un trabajo similar está disponible [aquí](https://github.com/guzmart/covid19_m
 ## English
 
 Listing of cases confirmed by day, with age, day of initial symptoms and type of case (confirmed/recovered/dead; imported/contact).
+**Note: The particular state of the patient (recovered/deceased) will no longer be reported after March 24**
 The lists are available from March 13 onwards(°) because the official listings are not available for prior dates.
 
 A similar work is available [here](https://github.com/guzmart/covid19_mex).
