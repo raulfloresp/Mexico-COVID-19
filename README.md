@@ -1,8 +1,8 @@
 # Base de datos de casos de COVID-19 reportados en México / Database of reported cases of COVID-19 in Mexico.
 
-Última actualización/Last update: 2020-03-24 T 19:40:00-06:00
+Última actualización/Last update: 2020-03-25 T 21:00:00-06:00
 
-**Nota/Note:** 
+**Nota/Note:**
 Los casos recuperados ya no se listan en el CTD desde el 2020-03-23.
 **La situación de cada paciente (recuperado/fallecido) no será actualizada a partir del 2020-03-23.**
 
@@ -17,6 +17,9 @@ Latin american dataset [here](https://github.com/DataScienceResearchPeru/covid-1
 
 Visualización de los datos reportados por Joel Ricci-López (@jRicciL) [aqui](https://joelricci.shinyapps.io/covid_mx_jrl/).
 Visualization of the reported data by Joel Ricci-López (@jRicciL) [here](https://joelricci.shinyapps.io/covid_mx_jrl/).
+
+Mapa oficial de la DGE (Dirección General de Epidemiología) [aquí](http://ncov.sinave.gob.mx/mapa.aspx).
+Official map of the DGE (General Directorate of Epidemiology by its acronym in Spanish) [here](http://ncov.sinave.gob.mx/mapa.aspx).
 
 ## Español
 Información de casos de COVID-19 dada a conocer por el Gobierno Federal de México desglosada por entidad.

@@ -1,6 +1,6 @@
 # Casos diarios / Daily cases
 
-Última actualización: 2020-03-24 T 19:40:00-06:00
+Última actualización: 2020-03-25 T 21:00:00-06:00
 
 ## Español
 
