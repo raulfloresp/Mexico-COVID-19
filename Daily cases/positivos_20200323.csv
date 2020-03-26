@@ -1,10 +1,10 @@
 Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regreso
 1,CIUDAD DE MÉXICO,M,35,2020-02-22,confirmado,Italia,2020-02-22
-2,SINALOA,M,41,2020-02-22,recuperado,Italia,2020-02-21
+2,SINALOA,M,41,2020-02-22,confirmado,Italia,2020-02-21
 3,CIUDAD DE MÉXICO,M,59,2020-02-23,confirmado,Italia,2020-02-22
-4,COAHUILA,F,20,2020-02-27,recuperado,Italia,2020-02-25
+4,COAHUILA,F,20,2020-02-27,confirmado,Italia,2020-02-25
 5,CHIAPAS,F,18,2020-02-25,confirmado,Italia,2020-02-25
-6,MÉXICO,M,71,2020-02-21,recuperado,Italia,2020-02-21
+6,MÉXICO,M,71,2020-02-21,confirmado,Italia,2020-02-21
 7,CIUDAD DE MÉXICO,M,46,2020-02-29,confirmado,Estados Unidos,2020-02-29
 8,QUERÉTARO,M,43,2020-03-09,confirmado,España,2020-03-06
 9,CIUDAD DE MÉXICO,M,41,2020-03-07,confirmado,Estados Unidos,2020-03-06
@@ -62,7 +62,7 @@ Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regr
 61,MÉXICO,M,27,2020-03-13,confirmado,Contacto,NA
 62,MÉXICO,F,47,2020-03-05,confirmado,Estados Unidos,2020-02-29
 63,MÉXICO,F,59,2020-03-07,confirmado,Francia,2020-03-08
-64,CIUDAD DE MÉXICO,M,41,2020-03-09,fallecido,Contacto,NA
+64,CIUDAD DE MÉXICO,M,41,2020-03-09,confirmado,Contacto,NA
 65,GUANAJUATO,M,39,2020-03-12,confirmado,Alemania,2020-03-10
 66,NUEVO LEÓN,M,72,2020-03-11,confirmado,Estados Unidos,2020-03-10
 67,CHIHUAHUA,M,29,2020-03-12,confirmado,Alemania,2020-03-12
@@ -156,7 +156,7 @@ Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regr
 155,VERACRUZ,F,64,2020-03-18,confirmado,España,2020-03-15
 156,NUEVO LEÓN,M,35,2020-03-09,confirmado,Estados Unidos,2020-03-09
 157,NUEVO LEÓN,M,42,2020-03-16,confirmado,Contacto,NA
-158,DURANGO,M,74,2020-03-15,fallecido,Estados Unidos,2020-03-03
+158,DURANGO,M,74,2020-03-15,confirmado,Estados Unidos,2020-03-03
 159,MORELOS,M,37,2020-03-14,confirmado,Estados Unidos,2020-03-07
 160,QUERÉTARO,M,34,2020-03-15,confirmado,Francia,2020-03-15
 161,VERACRUZ,F,63,2020-03-14,confirmado,España,2020-03-13
@@ -227,7 +227,7 @@ Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regr
 226,NUEVO LEÓN,M,35,2020-03-17,confirmado,Estados Unidos,2020-03-15
 227,PUEBLA,F,30,2020-03-16,confirmado,Estados Unidos,2020-03-15
 228,CIUDAD DE MÉXICO,M,27,2020-03-15,confirmado,Francia,2020-03-15
-229,CIUDAD DE MÉXICO,M,71,2020-03-04,fallecido,España,2020-03-14
+229,CIUDAD DE MÉXICO,M,71,2020-03-04,confirmado,España,2020-03-14
 230,CIUDAD DE MÉXICO,F,25,2020-03-09,confirmado,España,2020-03-13
 231,CIUDAD DE MÉXICO,M,43,2020-03-08,confirmado,España,2020-03-04
 232,CIUDAD DE MÉXICO,F,31,2020-03-03,confirmado,Alemania,2020-03-09
@@ -324,7 +324,7 @@ Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regr
 323,SONORA,M,22,2020-03-11,confirmado,España,2020-03-17
 324,BAJA CALIFORNIA SUR,F,33,2020-03-16,confirmado,Contacto,2020-03-07
 325,QUERÉTARO,M,37,2020-03-16,confirmado,Contacto,NA
-326,JALISCO,M,55,2020-03-13,fallecido,Contacto,NA
+326,JALISCO,M,55,2020-03-13,confirmado,Contacto,NA
 327,MÉXICO,M,24,2020-03-20,confirmado,Italia,2020-03-14
 328,MÉXICO,F,29,2020-03-20,confirmado,España,2020-03-15
 329,MÉXICO,F,29,2020-03-12,confirmado,Estados Unidos,2020-02-27
