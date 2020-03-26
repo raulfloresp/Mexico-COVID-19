@@ -9,11 +9,11 @@ nombres_estados = ["AGUASCALIENTES", "BAJA CALIFORNIA", "BAJA CALIFORNIA SUR", "
 #Define las palabras claves asociadas a casos locales (no importados):
 keywords_locales = ["Contacto"]
 
-#Cálculo de los números de tipos de casos (importados, locales, positivos, recuperados y fallecidos) por estado:
-function tipo_casos(datos_diarios, estado)
+#Cálculo de los números de tipos de casos (importados, locales, positivos y fallecidos) por estado:
+function tipo_casos(confirmados_diarios, fallecidos_diarios, estado)
 
     #Obtiene los datos del estado:
-    casos_entidad = filter(row -> row[:Estado] == estado, datos_diarios)
+    casos_entidad = filter(row -> row[:Estado] == estado, confirmados_diarios)
 
     #El número total de casos confirmados en el estado:
     positivos = length(casos_entidad.Situación)
@@ -24,13 +24,11 @@ function tipo_casos(datos_diarios, estado)
     #El número de casos locales:
     locales = positivos - importados
 
-    #El conjunto de casos recuperados en el estado:
-    recuperados = filter(row -> row[:Situación] == "recuperado", casos_entidad).Número_caso |> length
+    #El número total de fallecidos en el estado se extrae del otro documento:
+    fallecidos_estado = filter(row -> row[:Estado] == estado, fallecidos_diarios).Fallecidos[1]
 
-    #El conjunto de casos fallecidos en el estado:
-    fallecidos = filter(row -> row[:Situación] == "fallecido", casos_entidad).Número_caso |> length
-
-    return [importados, locales, positivos, recuperados, fallecidos]
+    #El número de recuperados no se publica en los documentos oficiales. Se reporta como missing.
+    return [importados, locales, positivos, missing, fallecidos_estado]
 end
 
 #Actualiza la tabla cumulativa del día a partir de la fecha y los datos del CTD.
@@ -38,10 +36,11 @@ end
 function fila_actualización(fecha, positivos_reportados, sospechosos_reportados, negativos_reportados, número_IRAG)
 
     #Carga los datos del día:
-    datos_diarios = CSV.read("Daily cases/positivos_$(fecha).csv", header = 1, copycols = true)
+    confirmados_diarios = CSV.read("Daily data/positivos_$(fecha).csv", header = 1, copycols = true)
+    fallecidos_diarios = CSV.read("Daily data/fallecidos_$(fecha).csv", header = 1)
 
     #Calcula los casos de cada estado
-    casos_estados = map(estado -> tipo_casos(datos_diarios, estado), nombres_estados)
+    casos_estados = map(estado -> tipo_casos(confirmados_diarios, fallecidos_diarios, estado), nombres_estados)
 
     #Calcula los casos en el país
     acumulado_país = sum(casos_estados)
@@ -59,6 +58,9 @@ function fila_actualización(fecha, positivos_reportados, sospechosos_reportados
 
     #Agrega comas para el csv y lo junta todo en un string
     fila_csv = prod(fila[1:(end - 1)].*",")*fila[end]
+
+    #Elimina los missing (para que quede el espacio vacío)
+    fila_csv = replace(fila_csv, r"missing" => "")
 
     #Agrega el resultado al csv acumulativo:
     open("Mexico_COVID19.csv", "a") do io

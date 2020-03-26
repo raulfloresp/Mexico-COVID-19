@@ -32,7 +32,7 @@ Las columnas están nombradas de acuerdo al siguiente formato: ```EDO_{key}```. 
 - ```I```: representa el número de casos confirmados(°) importados del extranjero al estado.
 - ```L```: representa el número de casos confirmados locales dados en el estado.
 - *ninguno*: representa el número total de casos confirmados en el estado.
-- ```R```: representa el número total de casos confirmados recuperados(°°) en el estado.
+- ```R```: representa el número total de casos confirmados recuperados(°°) en el estado. No se publica información del número por estado desde el 23 de Marzo.
 - ```D```: representa el número total de casos confirmados fallecidos en el estado.
 
 Adicionalmente,  se tienen las siguientes columnas:
@@ -47,6 +47,7 @@ Adicionalmente,  se tienen las siguientes columnas:
 - ```IRAG_Test```: es el número total de muestras de pacientes al azar(°°°) cuya muestra fue analizada en busca de SARS-CoV-2. (Reportado en el CTD a partir del 25 de febrero, anunciado el 23 de febrero.)
 - ```Tested_total```: es el número total de pruebas realizadas en el país, según datos oficiales. (Suma de las columnas ```Pos```, ```Susp_rep```, ```Neg_rep``` e ```IRAG_Test```.)
 - ```Recovered```: es el número total de casos confirmados recuperados en el país. (Suma de las columnas ```EDO_R```.)
+No hay números exactos reportados a partir del 23 de marzo.
 - ```Deceased```: es el número total de casos confirmados fallecidos en el país. (Suma de las columnas ```EDO_D```.)
 
 (°) Caso confirmado consiste en un paciente cuya muestra resultó positiva a la búsqueda de SARS-CoV-2. (No es del todo claro en los datos oficiales si estos incluyen el caso de portadores que se mencionan en los CTD. El incremento en las cifras (y el listado del primer portador en la lista de casos oficiales) parece sugerir que sí es el caso.)
@@ -77,7 +78,7 @@ The columns are named according to the following format: ```EDO_{key}```. ```EDO
 - ```I```: represents the number of confirmed(°) cases, imported from abroad to the state.
 - ```L```: represents the number of confirmed local cases in the state.
 - *none*: represents the total number of cases in the state.
-- ```R```: represents the number of confirmed cases that have recovered(°°) in the state.
+- ```R```: represents the number of confirmed cases that have recovered(°°) in the state. No information about the number of recovered cases per state is published from March 23 onwards.
 - ```D```: represents the number of confirmed cases that have died in the state.
 
 Aditionally, we have the following columns:
@@ -92,6 +93,7 @@ Aditionally, we have the following columns:
 - ```IRAG_Test```: is the total number of samples from random patients(°°°) whose sample was tested for SARS-CoV-2. (Reported in the CTD from February 25 onwards, announced on February 23.)
 - ```Tested_total```: is the total number of tests done in the country, according to official data. (Sum of the ```Pos```, ```Susp_rep```, ```Neg_rep``` and ```IRAG_Test``` columns.)
 - ```Recovered```: is the total number of confirmed recovered cases in the country. (Sum of the ```EDO_R``` columns.)
+No exact number of recovered patients has been reported from March 23 onwards.
 - ```Deceased```: is the total number of confirmed deceased cases in the country. (Sum of the ```EDO_D``` columns.)
 
 (°) A confirmed case consists in a patient whose sample tested positive for SARS-CoV-2. (It isn't fully clear in the official data if these numbers contain asymptomatic carriers (*portadores*) mentioned in the CTD. The increase in the numbers (and that the first carrier was listed in the official case list) suggests the numbers do reflect the mentioned carriers.)
