@@ -29,6 +29,7 @@ La información es extraída de los Comunicados Técnicos Diarios (CTD) publicad
 Los datos por día y estado están contenidos en ```Mexico_COVID19.ods```. Un archivo ```.csv``` con datos idénticos se proporciona por conveniencia.
 Las columnas están nombradas de acuerdo al siguiente formato: ```EDO_{key}```. ```EDO``` es el [código ISO de tres letras del estado](https://www.iso.org/obp/ui/#iso:code:3166:MX). ```key``` puede tener los siguientes valores:
 
+- ```S```: representa el número total de casos sospechosos en el estado.
 - ```I```: representa el número de casos confirmados(°) importados del extranjero al estado.
 - ```L```: representa el número de casos confirmados locales dados en el estado.
 - *ninguno*: representa el número total de casos confirmados en el estado.
@@ -38,6 +39,7 @@ Las columnas están nombradas de acuerdo al siguiente formato: ```EDO_{key}```. 
 Adicionalmente,  se tienen las siguientes columnas:
 
 - ```Fecha```: fecha dada en formato ISO.
+- ```Susp```: representa el número total de casos sospechosos en el país. (Difiere en uno de la cuenta oficial el 23 de marzo debido a que el paciente 576 no tiene datos de entidad ni localidad registrados.)
 - ```Pos_I```: es el número total de casos confirmados importados del extranjero al país. (Suma de las columnas ```EDO_I```.)
 - ```Pos_L```: es el número total de casos confirmados locales dados en el país. (Suma de las columnas ```EDO_L```.)
 - ```Pos```: es el número total de casos confirmados en el país, independientemente de su origen. (Suma de las columnas ```EDO_I``` y ```EDO_L```.) (Difiere en una unidad del valor oficial dado entre el 11 y el 13 de marzo debido a que en las listas oficiales el caso de Sinaloa recuperado se dejó de contabilizar, para volverse a listar a partir del 14 de marzo, igual que con los demás casos recuperados.)
@@ -75,6 +77,7 @@ The data by day and state are contained in ```Mexico_COVID19.ods```. A ```.csv``
 
 The columns are named according to the following format: ```EDO_{key}```. ```EDO``` is the [three-letter ISO code for the state](https://www.iso.org/obp/ui/#iso:code:3166:MX). ```key``` takes the following values:
 
+- ```S```: represents the total number of suspect cases in the state.
 - ```I```: represents the number of confirmed(°) cases, imported from abroad to the state.
 - ```L```: represents the number of confirmed local cases in the state.
 - *none*: represents the total number of cases in the state.
@@ -84,6 +87,8 @@ The columns are named according to the following format: ```EDO_{key}```. ```EDO
 Aditionally, we have the following columns:
 
 - ```Fecha```: date given in ISO format.
+- ```Susp```: is the total number of suspect cases in the country. (It differs in one from the official tally on March 23 because patient 576 has no state or municipality registered.)
+in ISO format.
 - ```Pos_I```:  is the total number of confirmed cases, imported from abroad into the country. (Sum of the ```EDO_I``` columns.)
 - ```Pos_L```: is the total number of confirmed local cases. (Sum of the ```EDO_L``` columns.)
 - ```Pos```: is the total number of confirmed cases in the country, independent of their origin. (Sum of the ```EDO_I``` and ```EDO_L``` columns.) (It differs from the official number of cases in the country by a unit from March 11 to March 13 because the official tally doesn't include the recovered case in Sinaloa on this period. It is again included after March 14, along all other recovered cases.)
