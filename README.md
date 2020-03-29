@@ -13,6 +13,7 @@ Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
 
 **Nota/Note:**
 2020-03-29: El número de pruebas realizadas en el país se corrigió retroactivamente para no incluir casos sospechosos, puesto que no se conoce con certeza si en realidad les fueron realizadas pruebas de laboratorio. Ahora sólo consiste de la suma del número de casos positivos con el número de casos negativos y las pruebas de SISVEFLU/IRAG para SARS-CoV-2. *Gracias a Luis López Martinelli por su observación*.
+
 2020-03-29: The number of total tests done in the country was retroactively changed as to not include suspect cases, because it is not known certainly if they were lab-tested. The number currently is the sum of the number of positive cases with the number of negative cases and the random tests of samples coming from SISVEFLU/IRAG for SARS-CoV-2. *Special thanks to Luis López Martinelli  for his observation*.
 
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
