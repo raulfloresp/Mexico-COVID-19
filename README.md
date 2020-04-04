@@ -1,6 +1,6 @@
 # Base de datos de casos de COVID-19 reportados en México / Database of reported cases of COVID-19 in Mexico.
 
-Última actualización/Last update: 2020-04-02 T 19:30:00-06:00
+Última actualización/Last update: 2020-04-03 T 20:00:00-06:00
 
 ## Miscelánea/Random tidbits:
 
@@ -16,10 +16,14 @@ Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
 
 2020-03-29: The number of total tests done in the country was retroactively changed as to not include suspect cases, because it is not known certainly if they were lab-tested. The number currently is the sum of the number of positive cases with the number of negative cases and the random tests of samples coming from SISVEFLU/IRAG for SARS-CoV-2. *Special thanks to Luis López Martinelli  for his observation*.
 
+**Nota/Note:**
+2020-04-03: El comunicado técnico diario ya no reporta el número de pruebas de SISVEFLU/IRAG para SARS-CoV-2. Se deja de reportar este dato. El número de pruebas totales consiste en el número de casos positivos más el número de casos negativos.
+2020-04-03: The daily technical communiqué no longer reports the number of SISVEFLU/IRAG tests for SARS-CoV-2. This datum will no longer be reported. The number of total tests done consists on the number of total positive cases plus the number of negartive cases.
+
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 Information of the mexican hospitalary system [here](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 
-Dataset de latinoamética [aquí](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
+Dataset de latinoamérica [aquí](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
 Latin american dataset [here](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
 
 Visualización de los datos reportados por Joel Ricci-López (@jRicciL) [aqui](https://joelricci.shinyapps.io/covid_mx_jrl/).
@@ -56,8 +60,8 @@ Adicionalmente,  se tienen las siguientes columnas:
 - ```Pos_rep```: es el número total de casos confirmados en el país, independientemente de su origen, reportados oficialmente. ( *Confirmados* en el CTD.)
 - ```Susp_rep```: es el número total de casos sospechosos en el país, reportados oficialmente. ( *Sospechosos* en el CTD.)
 - ```Neg_rep```: es el número total de casos descartados (por laboratorio) en el país, reportados oficialmente. ( *Negativos* en el CTD.)
-- ```IRAG_Test```: es el número total de muestras de pacientes al azar(°°°) cuya muestra fue analizada en busca de SARS-CoV-2. (Reportado en el CTD a partir del 25 de febrero, anunciado el 23 de febrero.)
-- ```Tested_total```: es el número total de pruebas realizadas en el país, según datos oficiales. (Suma de las columnas ```Pos```, ```Neg_rep``` e ```IRAG_Test```.)
+- ```IRAG_Test```: **No reportado desde el 2020-04-03** es el número total de muestras de pacientes al azar(°°°) cuya muestra fue analizada en busca de SARS-CoV-2. (Reportado en el CTD a partir del 25 de febrero, anunciado el 23 de febrero.)
+- ```Tested_total```: es el número total de pruebas realizadas en el país, según datos oficiales. (Suma de las columnas ```Pos``` y ```Neg_rep```.)
 - ```Recovered```: es el número total de casos confirmados recuperados en el país. (Suma de las columnas ```EDO_R```.)
 No hay números exactos reportados a partir del 23 de marzo.
 - ```Deceased```: es el número total de casos confirmados fallecidos en el país. (Suma de las columnas ```EDO_D```.)
@@ -105,8 +109,8 @@ Aditionally, we have the following columns:
 - ```Pos_rep```: is the total number of officially reported confirmed cases in the country, independent of their origin. ( *Confirmados* in the CTD.)
 - ```Susp_rep```: is the total number of officially suspected cases in the country. ( *Sospechosos* in the CTD.)
 - ```Neg_rep```: is the total number of officially discarded (negative lab test) cases in the country. ( *Negativos* in the CTD.)
-- ```IRAG_Test```: is the total number of samples from random patients(°°°) whose sample was tested for SARS-CoV-2. (Reported in the CTD from February 25 onwards, announced on February 23.)
-- ```Tested_total```: is the total number of tests done in the country, according to official data. (Sum of the ```Pos```, ```Neg_rep``` and ```IRAG_Test``` columns.)
+- ```IRAG_Test```: **no longer reported (2020-04-03)** is the total number of samples from random patients(°°°) whose sample was tested for SARS-CoV-2. (Reported in the CTD from February 25 onwards, announced on February 23.)
+- ```Tested_total```: is the total number of tests done in the country, according to official data. (Sum of the ```Pos```, and ```Neg_rep``` columns.)
 - ```Recovered```: is the total number of confirmed recovered cases in the country. (Sum of the ```EDO_R``` columns.)
 No exact number of recovered patients has been reported from March 23 onwards.
 - ```Deceased```: is the total number of confirmed deceased cases in the country. (Sum of the ```EDO_D``` columns.)
