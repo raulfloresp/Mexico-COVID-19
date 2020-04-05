@@ -20,6 +20,10 @@ Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
 2020-04-03: El comunicado técnico diario ya no reporta el número de pruebas de SISVEFLU/IRAG para SARS-CoV-2. Se deja de reportar este dato. El número de pruebas totales consiste en el número de casos positivos más el número de casos negativos.
 2020-04-03: The daily technical communiqué no longer reports the number of SISVEFLU/IRAG tests for SARS-CoV-2. This datum will no longer be reported. The number of total tests done consists on the number of total positive cases plus the number of negartive cases.
 
+**Nota/Note:**
+2020-04-04: Algunas de las fechas del inicio de síntomas en las tablas oficiales de **casos sospechosos** son sustituidas por números de forma intermitente desde finales de marzo. Esto es reflejado en los archivos ```.csv``` respectivos. Se desconoce el significado de los mismos. *Gracias a Erik Salgado Estrada por su observación.*
+2020-04-04: Some of the dates of the onset of symptoms in the official tables of **supect cases** are substituted by numbers intermitently since late March. This is reflected in the respective ```.csv``` files. It's unknown if they mean anything specific. *Special thanks to Erik Salgado Estrada for his observation*.
+
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 Information of the mexican hospitalary system [here](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 
