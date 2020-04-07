@@ -7,7 +7,7 @@ using DataFrames
 nombres_estados = ["AGUASCALIENTES", "BAJA CALIFORNIA", "BAJA CALIFORNIA SUR", "CAMPECHE", "CHIAPAS", "CHIHUAHUA", "CIUDAD DE MÉXICO", "COAHUILA", "COLIMA", "DURANGO", "GUANAJUATO", "GUERRERO", "HIDALGO", "JALISCO", "MICHOACÁN", "MORELOS", "MÉXICO", "NAYARIT", "NUEVO LEÓN", "OAXACA", "PUEBLA", "QUERÉTARO", "QUINTANA ROO", "SAN LUIS POTOSÍ", "SINALOA", "SONORA", "TABASCO", "TAMAULIPAS", "TLAXCALA", "VERACRUZ", "YUCATÁN", "ZACATECAS"]
 
 #Define las palabras claves asociadas a casos locales (no importados):
-keywords_locales = ["Contacto"]
+keywords_locales = ["Contacto", "NA", "OTRO", "República", "MEX", "Otro"]
 
 #Cálculo de los números de tipos de casos (sospechosos, importados, locales, positivos y fallecidos) por estado:
 function tipo_casos(sospechosos_diarios, confirmados_diarios, fallecidos_diarios, estado)
