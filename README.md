@@ -2,7 +2,27 @@
 
 Última actualización/Last update: 2020-04-06 T 21:20:00-06:00
 
-## Miscelánea/Random tidbits:
+**Nota *importante*/*Important* Note:**
+
+2020-03-07: Las tablas de casos del día de ayer (2020-04-06) tienen un formato diferente a las de días pasados. 
+Se cambió la ortografía (se omitieron acentos), se ocupó "Distrito Federal" en lugar de "Ciudad de México", los países de los casos con antecedentes de viaje tienen sus nombres incompletos o confusos, se eliminó la fecha de importación, entre otras cosas. 
+Elí Parra ([1](https://twitter.com/elzr/status/1247428446751526913?s=20), [2](https://covidatos.mx/)); Luis G. Canales ([1](https://github.com/LGCO/MEXICO_COVID19_DATA)); Gerardo Mathus ([1](https://covid19.nextia.mx/)); Katia Guzmán Martínez ([1](https://github.com/guzmart/covid19_mex)), entre otros, han señalado la existencia de inconsistencias adicionales en los datos.
+Desconozco la razón por la cual se realizaron estos cambios.
+Personalmente me he limitado a cambiar la ortografía de las entidades de las tablas para constuir los archivos [```positivos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/positivos_20200406.csv) y [```sospechosos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/sospechosos_20200406.csv) a partir de las tablas originales archivadas [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/positivos_20200406.pdf) y [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/sospechosos_20200406.pdf).
+Para el análisis de separar casos como locales o importados por estado, mostrado [aqui](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.csv) y [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.ods), las palabras clave en la columna ```País_fuente``` de la lista de casos positivos usadas para clasificar un caso positivo como local se muestran [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Scraping/csv_daily_scraping.jl#L10).
+*Gracias a Luis G. Canales y a Luis López Martinelli por sus observaciones.*
+
+2020-03-07: The cases tables from yesterday (2020-04-06) have a different format from those from other days.
+The orthography was changed (accents were ommited), the term "Distrito Federal" (*Federal District*) was used instead of "Ciudad de México" (*Mexico City*), the countries of the cases with history of travel have their names incomplete or used in an inconsistent manner, the date of importation of the case was deleted, among other things.
+Elí Parra ([1](https://twitter.com/elzr/status/1247428446751526913?s=20), [2](https://covidatos.mx/)); Luis G. Canales ([1](https://github.com/LGCO/MEXICO_COVID19_DATA)); Gerardo Mathus ([1](https://covid19.nextia.mx/)); Katia Guzmán Martínez ([1](https://github.com/guzmart/covid19_mex)), among others, have commented on the existence of additional inconsistencies in the data.
+I don't know the reason behind these changes.
+Personally, I have limited myself to change the ortography of the entities in the tables to build the files [```positivos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/positivos_20200406.csv) and [```sospechosos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/sopechosos_20200406.csv) from the original tables archived [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/positivos_20200406.pdf) and [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/sospechosos_20200406.pdf).
+To do the analysis of classifying the positive cases per state as local or imported, shown [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.csv) and [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.ods)
+, the keywords in the column ```País_fuente```of the list of positive cases used to classified a case as local are shown 
+[here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Scraping/csv_daily_scraping.jl#L10).
+*Special thanks to Luis G. Canales and to Luis López Martinelli for their observations.*
+
+## Notas/Notes (archivo/archive):
 
 **Nota/Note:**
 Los casos recuperados ya no se listan en el CTD desde el 2020-03-23.
@@ -25,6 +45,8 @@ Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
 2020-04-04: Algunas de las fechas del inicio de síntomas en las tablas oficiales de **casos sospechosos** son sustituidas por números de forma intermitente desde finales de marzo. Esto es reflejado en los archivos ```.csv``` respectivos. Se desconoce el significado de los mismos. *Gracias a Erik Salgado Estrada por su observación.*
 
 2020-04-04: Some of the dates of the onset of symptoms in the official tables of **supect cases** are substituted by numbers intermitently since late March. This is reflected in the respective ```.csv``` files. It's unknown if they mean anything specific. *Special thanks to Erik Salgado Estrada for his observation*.
+
+## Más información / Extra info:
 
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 Information of the mexican hospitalary system [here](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
