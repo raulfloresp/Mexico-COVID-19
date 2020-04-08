@@ -18,9 +18,8 @@ function texto_pdf(archivo)
   #Escribimos el texto al buffer.
   #Entre cada página forzamos una línea nueva.
   for page in pages
-
     pdPageExtractText(datos, page)
-    write(datos, " \n ")
+    write(datos, " \n")
   end
 
   #Cerramos el documento.
@@ -55,47 +54,67 @@ end
 
 function procesa_fila(string, index_fechas)
   out = replace(string, r"^\s+" => "")  # espacios al inicio
-  out = replace(out, r"\s+$" => "")  # espacios al final
-  out = replace(out, r"QUERETARO" => "QUERÉTARO")
-  out = split(out, r"\s{2,}")        # mas de dos espacios define entradas
+  out = replace(out, r"\s+$" => "")     # espacios al final
+
+  # Correciones para normalizar una tabla como la de Abril 6
+  correcciones = Dict("DISTRITO FEDERAL" => "CIUDAD DE MÉXICO",
+                      "MEXICO" => "MÉXICO",
+                      "MICHOACAN" => "MICHOACÁN",
+                      "NUEVO LEON" => "NUEVO LEÓN",
+                      "QUERETARO" => "QUERÉTARO",
+                      "SAN LUIS POTOSI" => "SAN LUIS POTOSÍ",
+                      "YUCATAN" => "YUCATÁN",
+                      "MASCULINO" => "M",
+                      "FEMENINO" => "F")
+
+  for (k, v) in correcciones
+    out = replace(out, k => v)
+  end
+
+  out = split(out, r"\s{2,}")           # mas de dos espacios define las entradas
 
   for i in index_fechas
-    out[i] = procesa_fecha(out[i])  # fechas en formato ISO de ser posible
+    out[i] = procesa_fecha(out[i])  # fechas en formato ISO (de ser posible)
   end
 
   return out
 end
 
-#Función principal que toma un nombre de archivo y escribe el archivo .csv correspondiente:
-function scraping(archivo, sospechosos=false; index_fechas=[5])
-
-  @assert endswith(archivo, ".pdf")
-
-  #Remueve la extensión para nombrar el .csv apropiadamente
-  nombre = splitext(basename(archivo))[1]
+#Función principal que toma el pdf y escribe csv correspondiente
+function scraping(archivo_pdf, archivo_csv; fecha_llegada=false, index_fechas=[5])
+  @assert endswith(archivo_csv, ".csv")
 
   #Obtenemos los casos en un array:
-  casos = procesa_fila.(eliminar_nocasos(texto_pdf(archivo)), index_fechas)
+  casos = procesa_fila.(eliminar_nocasos(texto_pdf(archivo_pdf)), index_fechas)
+
+  header = ["Número_caso", "Estado", "Sexo", "Edad", "Fecha_síntomas",
+            "Situación", "País_fuente"]
+  # TOOD: evitar utilizar acentos para nombres de las columnas?
+
+  # Esto se puede cambiar para modificar el header
+  fecha_llegada ? push!(header, "Fecha_llegada") : nothing
 
   #Escribe el archivo
-  open(nombre*".csv", "w") do io
-
-    if sospechosos
-      write(io, "Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regreso\n")
-    else
-      write(io, "Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regreso\n")
-    end
-
+  open(archivo_csv, "w") do io
+    writedlm(io, [header], ',')
     writedlm(io, casos, ',')  # esto escribe todas las filas con separadores y \n
   end
 
   return "Done"
 end
 
+# Si el nombre del csv no se proporciona, se utiliza la misma base
+function scraping(archivo_pdf; fecha_llegada=false, index_fechas=[5])
+  archivo_csv = splitext(basename(archivo_pdf))[1] * ".csv"
+  scraping(archivo_pdf, archivo_csv;
+          fecha_llegada=fecha_llegada, index_fechas=index_fechas)
+end
+
 
 if abspath(PROGRAM_FILE) == @__FILE__
-  archivo = ARGS[1]
+  archivo_pdf = ARGS[1]
+  @assert endswith(archivo_pdf, ".pdf")
 
-  output = scraping(archivo)
-  println(output)
+  status = scraping(archivo_pdf)
+  println(status)
 end
