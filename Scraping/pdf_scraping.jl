@@ -1,7 +1,9 @@
 #A partir de PDFs con tablas de la SSA, devuelve un CSV.
 
-#Paquetería para leer pdfs.
+#Paquetería para leer pdfs y manipular fechas
 using PDFIO
+using Dates
+using DelimitedFiles
 
 #Devuelve el texto del pdf como un string
 function texto_pdf(archivo)
@@ -41,31 +43,39 @@ function eliminar_nocasos(string)
   return rows
 end
 
-#Elimina espacios adicionales y separa las columnas por comas.
-function limpiar_fila(string)
 
-  #Elimina el espacio inicial.
-  a = replace(string, r"^ +" => "")
-  #Elimina el espacio final y lo sustituye por un retorno de línea.
-  b = replace(a, r" +$" => "\n")
-  #Elimina espacios intermedios si son más de dos(para evitar problemas con los campos en si) y los reemplaza por una coma.
-  c = replace(b, r" {2,}" => ",")
-  #Corrige la ortografía de Querétaro:
-  d = replace(c, r"QUERETARO" => "QUERÉTARO")
-  #Cambia las fechas a formato ISO:
-  row = replace(d, r"(\d{1,2})/(\d{1,2})/(\d{4})" => s"\3-\2-\1")
+function procesa_fecha(string)
+  try
+    return Dates.format(Date(string, "dd/mm/yyyy"), "yyyy-mm-dd")
+  catch e
+    return ""
+  end
+end
 
-  return row
+
+function procesa_fila(string, index_fechas)
+  out = replace(string, r"^\s+" => "")  # espacios al inicio
+  out = replace(out, r"\s+$" => "")  # espacios al final
+  out = replace(out, r"QUERETARO" => "QUERÉTARO")
+  out = split(out, r"\s{2,}")        # mas de dos espacios define entradas
+
+  for i in index_fechas
+    out[i] = procesa_fecha(out[i])  # fechas en formato ISO de ser posible
+  end
+
+  return out
 end
 
 #Función principal que toma un nombre de archivo y escribe el archivo .csv correspondiente:
-function scraping(archivo, sospechosos = false)
+function scraping(archivo, sospechosos=false; index_fechas=[5])
+
+  @assert endswith(archivo, ".pdf")
 
   #Remueve la extensión para nombrar el .csv apropiadamente
-  nombre = replace(archivo, r".pdf" => "")
+  nombre = splitext(basename(archivo))[1]
 
   #Obtenemos los casos en un array:
-  casos = limpiar_fila.(eliminar_nocasos(texto_pdf(archivo)))
+  casos = procesa_fila.(eliminar_nocasos(texto_pdf(archivo)), index_fechas)
 
   #Escribe el archivo
   open(nombre*".csv", "w") do io
@@ -76,11 +86,16 @@ function scraping(archivo, sospechosos = false)
       write(io, "Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regreso\n")
     end
 
-    for caso in casos
-
-      write(io, caso)
-    end
+    writedlm(io, casos, ',')  # esto escribe todas las filas con separadores y \n
   end
 
   return "Done"
+end
+
+
+if abspath(PROGRAM_FILE) == @__FILE__
+  archivo = ARGS[1]
+
+  output = scraping(archivo)
+  println(output)
 end
