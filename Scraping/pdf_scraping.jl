@@ -4,6 +4,7 @@
 using PDFIO
 using Dates
 using DelimitedFiles
+using ArgParse
 
 #Devuelve el texto del pdf como un string
 function texto_pdf(archivo)
@@ -82,10 +83,11 @@ end
 
 #Función principal que toma el pdf y escribe csv correspondiente
 function scraping(archivo_pdf, archivo_csv; fecha_llegada=false, index_fechas=[5])
-  @assert endswith(archivo_csv, ".csv")
 
   #Obtenemos los casos en un array:
-  casos = procesa_fila.(eliminar_nocasos(texto_pdf(archivo_pdf)), index_fechas)
+  casos = procesa_fila.(eliminar_nocasos(texto_pdf(archivo_pdf)), Ref(index_fechas))
+  # Ref evita el broadcasting con el segundo argumento (la lista de las columnas
+  # que se tienen que considerar fechas)
 
   header = ["Número_caso", "Estado", "Sexo", "Edad", "Fecha_síntomas",
             "Situación", "País_fuente"]
@@ -111,10 +113,53 @@ function scraping(archivo_pdf; fecha_llegada=false, index_fechas=[5])
 end
 
 
-if abspath(PROGRAM_FILE) == @__FILE__
-  archivo_pdf = ARGS[1]
+function parse_commandline()
+  settings = ArgParseSettings("convierte PDF con casos de covid-19 a archivo csv",
+                              suppress_warnings=true)
+
+  @add_arg_table! settings begin
+    "pdf"
+        help = "el archivo PDF con la tabla"
+        required = true
+    "--outfile", "-o"
+        help = "el archivo csv donde se va a escribir el resultado (default: el nombre del PDF)"
+        arg_type = String
+        default = ""
+    "--llegada"
+        help = "utilizar la columna `Fecha de llegada a México` (default: falso)"
+        action = :store_true
+        default = false
+  end
+
+  return parse_args(ARGS, settings)
+end
+
+function main()
+  parsed_args = parse_commandline()
+  # for (arg,val) in parsed_args
+  #     println("$arg  =>  $val")
+  # end
+
+  archivo_pdf = parsed_args["pdf"]
   @assert endswith(archivo_pdf, ".pdf")
 
-  status = scraping(archivo_pdf)
+  archivo_csv = parsed_args["outfile"]
+  fecha_llegada = parsed_args["llegada"]
+
+  kwargs = Dict{Symbol,Any}(:fecha_llegada => fecha_llegada)
+  fecha_llegada ? kwargs[:index_fechas] = [5,8] : nothing   # trata
+
+  if length(archivo_csv) == 0
+    status = scraping(archivo_pdf; kwargs...)
+  else
+    @assert endswith(archivo_csv, ".csv")
+    status = scraping(archivo_pdf, archivo_csv; kwargs...)
+  end
+
   println(status)
+end
+
+
+if abspath(PROGRAM_FILE) == @__FILE__
+  main()
 end
