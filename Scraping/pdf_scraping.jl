@@ -59,7 +59,7 @@ function limpiar_fila(string)
 end
 
 #Función principal que toma un nombre de archivo y escribe el archivo .csv correspondiente:
-function scraping(archivo, sospechosos = false)
+function scraping(archivo)
 
   #Remueve la extensión para nombrar el .csv apropiadamente
   nombre = replace(archivo, r".pdf" => "")
@@ -70,17 +70,31 @@ function scraping(archivo, sospechosos = false)
   #Escribe el archivo
   open(nombre*".csv", "w") do io
 
-    if sospechosos
-      write(io, "Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regreso\n")
-    else
-      write(io, "Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación,País_fuente,Fecha_regreso\n")
-    end
+    write(io, "Número_caso,Estado,Sexo,Edad,Fecha_síntomas,Situación\n")
 
     for caso in casos
 
       write(io, caso)
     end
   end
+
+  return "Done"
+end
+
+#Función que hace el scraping de las dos tablas de datos diarias:
+#fecha en formato "yyyymmdd"
+function daily_scraping(fecha)
+
+  año_mes = fecha[1:6]
+
+  #Casos positivos:
+  scraping("Documents/Tablas casos/$(año_mes)/positivos_$(fecha).pdf")
+  #Casos sospechosos:
+  scraping("Documents/Tablas casos/$(año_mes)/sospechosos_$(fecha).pdf")
+
+  #Mueve los archivos a la carpeta respectiva:
+  mv("Documents/Tablas casos/$(año_mes)/positivos_$(fecha).csv", "Daily data/$(año_mes)/positivos_$(fecha).csv")
+  mv("Documents/Tablas casos/$(año_mes)/sospechosos_$(fecha).csv", "Daily data/$(año_mes)/sospechosos_$(fecha).csv")
 
   return "Done"
 end

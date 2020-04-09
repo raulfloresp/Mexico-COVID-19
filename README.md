@@ -1,11 +1,18 @@
 # Base de datos de casos de COVID-19 reportados en México / Database of reported cases of COVID-19 in Mexico.
 
-Última actualización/Last update: 2020-04-07 T 19:48:00-06:00
+Última actualización/Last update: 2020-04-08 T 22:00:00-06:00
+
+**Nota/Note:**
+2020-04-08: Desde hoy aparentemente ya no se va a reportar la procedencia de los casos.
+Ya no se realizará distinción entre casos locales/importados
+
+2020-04-08: From today onwards, it seems that the country of procedence of the cases is no longer reported.
+No distinction will be longer imposed in local/imported cases.
 
 **Nota *importante*/*Important* Note:**
 
-2020-03-07: Las tablas de casos del día de ayer (2020-04-06) tienen un formato diferente a las de días pasados. 
-Se cambió la ortografía (se omitieron acentos), se ocupó "Distrito Federal" en lugar de "Ciudad de México", los países de los casos con antecedentes de viaje tienen sus nombres incompletos o confusos, se eliminó la fecha de importación, entre otras cosas. 
+2020-03-07: Las tablas de casos del día de ayer (2020-04-06) tienen un formato diferente a las de días pasados.
+Se cambió la ortografía (se omitieron acentos), se ocupó "Distrito Federal" en lugar de "Ciudad de México", los países de los casos con antecedentes de viaje tienen sus nombres incompletos o confusos, se eliminó la fecha de importación, entre otras cosas.
 Elí Parra ([1](https://twitter.com/elzr/status/1247428446751526913?s=20), [2](https://covidatos.mx/)); Luis G. Canales ([1](https://github.com/LGCO/MEXICO_COVID19_DATA)); Gerardo Mathus ([1](https://covid19.nextia.mx/)); Katia Guzmán Martínez ([1](https://github.com/guzmart/covid19_mex)), entre otros, han señalado la existencia de inconsistencias adicionales en los datos.
 Desconozco la razón por la cual se realizaron estos cambios.
 Personalmente me he limitado a cambiar la ortografía de las entidades de las tablas para constuir los archivos [```positivos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/positivos_20200406.csv) y [```sospechosos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/sospechosos_20200406.csv) a partir de las tablas originales archivadas [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/positivos_20200406.pdf) y [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/sospechosos_20200406.pdf).
@@ -18,7 +25,7 @@ Elí Parra ([1](https://twitter.com/elzr/status/1247428446751526913?s=20), [2](h
 I don't know the reason behind these changes.
 Personally, I have limited myself to change the ortography of the entities in the tables to build the files [```positivos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/positivos_20200406.csv) and [```sospechosos_20200406.csv```](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Daily%20data/202004/sopechosos_20200406.csv) from the original tables archived [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/positivos_20200406.pdf) and [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Documents/Tablas%20casos/sospechosos_20200406.pdf).
 To do the analysis of classifying the positive cases per state as local or imported, shown [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.csv) and [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.ods)
-, the keywords in the column ```País_fuente```of the list of positive cases used to classified a case as local are shown 
+, the keywords in the column ```País_fuente```of the list of positive cases used to classified a case as local are shown
 [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Scraping/csv_daily_scraping.jl#L10).
 *Special thanks to Luis G. Canales and to Luis López Martinelli for their observations.*
 
