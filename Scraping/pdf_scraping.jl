@@ -82,7 +82,10 @@ function procesa_fila(string, index_fechas)
 end
 
 #Función principal que toma el pdf y escribe csv correspondiente
-function scraping(archivo_pdf, archivo_csv; fecha_llegada=false, index_fechas=[5])
+function scraping(archivo_pdf, archivo_csv;
+                  procedencia=false,
+                  fecha_llegada=false,
+                  index_fechas=[5])
 
   #Obtenemos los casos en un array:
   casos = procesa_fila.(eliminar_nocasos(texto_pdf(archivo_pdf)), Ref(index_fechas))
@@ -90,10 +93,11 @@ function scraping(archivo_pdf, archivo_csv; fecha_llegada=false, index_fechas=[5
   # que se tienen que considerar fechas)
 
   header = ["Número_caso", "Estado", "Sexo", "Edad", "Fecha_síntomas",
-            "Situación", "País_fuente"]
-  # TOOD: evitar utilizar acentos para nombres de las columnas?
+            "Situación"]
+  # TODO: evitar utilizar acentos para nombres de las columnas?
 
   # Esto se puede cambiar para modificar el header
+  procedencia ? push!(header, "País_fuente") : nothing
   fecha_llegada ? push!(header, "Fecha_llegada") : nothing
 
   #Escribe el archivo
@@ -106,10 +110,9 @@ function scraping(archivo_pdf, archivo_csv; fecha_llegada=false, index_fechas=[5
 end
 
 # Si el nombre del csv no se proporciona, se utiliza la misma base
-function scraping(archivo_pdf; fecha_llegada=false, index_fechas=[5])
+function scraping(archivo_pdf; kwargs...)
   archivo_csv = splitext(basename(archivo_pdf))[1] * ".csv"
-  scraping(archivo_pdf, archivo_csv;
-          fecha_llegada=fecha_llegada, index_fechas=index_fechas)
+  scraping(archivo_pdf, archivo_csv; kwargs...)
 end
 
 
@@ -125,6 +128,10 @@ function parse_commandline()
         help = "el archivo csv donde se va a escribir el resultado (default: el nombre del PDF)"
         arg_type = String
         default = ""
+    "--procedencia"
+        help = "utilizar la columna `Procedencia` (default: falso)"
+        action = :store_true
+        default = false
     "--llegada"
         help = "utilizar la columna `Fecha de llegada a México` (default: falso)"
         action = :store_true
@@ -136,18 +143,19 @@ end
 
 function main()
   parsed_args = parse_commandline()
-  # for (arg,val) in parsed_args
-  #     println("$arg  =>  $val")
-  # end
 
   archivo_pdf = parsed_args["pdf"]
   @assert endswith(archivo_pdf, ".pdf")
 
   archivo_csv = parsed_args["outfile"]
+  procedencia = parsed_args["procedencia"]
   fecha_llegada = parsed_args["llegada"]
 
-  kwargs = Dict{Symbol,Any}(:fecha_llegada => fecha_llegada)
-  fecha_llegada ? kwargs[:index_fechas] = [5,8] : nothing   # trata
+  kwargs = Dict{Symbol,Any}()
+  kwargs[:procedencia] = procedencia
+  kwargs[:fecha_llegada] = fecha_llegada
+  # trata de adivinar que fecha_llegada es una columna de fecha
+  fecha_llegada ? kwargs[:index_fechas] = [5,8] : nothing
 
   if length(archivo_csv) == 0
     status = scraping(archivo_pdf; kwargs...)
