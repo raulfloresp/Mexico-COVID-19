@@ -63,19 +63,38 @@ Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
 ## Más información / Extra info:
 
 Información del sistema hospitalario en México [aquí](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
+
 Information of the mexican hospitalary system [here](http://www.dgis.salud.gob.mx/contenidos/publicaciones/p_bie_gobmx.html).
 
+
 Dataset de latinoamérica [aquí](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
+
 Latin american dataset [here](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica).
 
+
 Visualización de los datos reportados por Joel Ricci-López (@jRicciL) [aqui](https://joelricci.shinyapps.io/covid_mx_jrl/).
+
 Visualization of the reported data by Joel Ricci-López (@jRicciL) [here](https://joelricci.shinyapps.io/covid_mx_jrl/).
 
+
 Mapa oficial de la DGE (Dirección General de Epidemiología) [aquí](http://ncov.sinave.gob.mx/mapa.aspx).
+
 Official map of the DGE (General Directorate of Epidemiology by its acronym in Spanish) [here](http://ncov.sinave.gob.mx/mapa.aspx).
 
+
 Un tablero bastante completo sobre el panorama en el país está disponible [aquí](http://covidatos.mx/)
+
 A really complete dashboard with a national overview is available [here](http://covidatos.mx/)
+
+
+Una visualización de datos internacional por país por Jason Campos [aquí](https://covid19.jsoncampos.com/).
+
+A visualization of international data by country made by Jason Campos [here](https://covid19.jsoncampos.com/).
+
+
+Una visualización de datos nacionales con desglose de casos por edad y sexo realizada por Erik Salgado [aquí](https://covid19.jsoncampos.com/).
+
+A visualization of national data with some graphs of the cases by age and gender made by Erik Salgad [here](https://covid19.jsoncampos.com/).
 
 ## Español
 Información de casos de COVID-19 dada a conocer por el Gobierno Federal de México desglosada por entidad.
