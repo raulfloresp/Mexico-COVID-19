@@ -11,7 +11,7 @@ No distinction will be longer imposed in local/imported cases.
 
 **Nota *importante*/*Important* Note:**
 
-2020-03-07: Las tablas de casos del día de ayer (2020-04-06) tienen un formato diferente a las de días pasados.
+2020-04-07: Las tablas de casos del día de ayer (2020-04-06) tienen un formato diferente a las de días pasados.
 Se cambió la ortografía (se omitieron acentos), se ocupó "Distrito Federal" en lugar de "Ciudad de México", los países de los casos con antecedentes de viaje tienen sus nombres incompletos o confusos, se eliminó la fecha de importación, entre otras cosas.
 Elí Parra ([1](https://twitter.com/elzr/status/1247428446751526913?s=20), [2](https://covidatos.mx/)); Luis G. Canales ([1](https://github.com/LGCO/MEXICO_COVID19_DATA)); Gerardo Mathus ([1](https://covid19.nextia.mx/)); Katia Guzmán Martínez ([1](https://github.com/guzmart/covid19_mex)), entre otros, han señalado la existencia de inconsistencias adicionales en los datos.
 Desconozco la razón por la cual se realizaron estos cambios.
@@ -19,7 +19,10 @@ Personalmente me he limitado a cambiar la ortografía de las entidades de las ta
 Para el análisis de separar casos como locales o importados por estado, mostrado [aqui](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.csv) y [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Mexico_COVID19.ods), las palabras clave en la columna ```País_fuente``` de la lista de casos positivos usadas para clasificar un caso positivo como local se muestran [aquí](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Scraping/csv_daily_scraping.jl#L10).
 *Gracias a Luis G. Canales y a Luis López Martinelli por sus observaciones.*
 
-2020-03-07: The cases tables from yesterday (2020-04-06) have a different format from those from other days.
+2020-04-09, addenda: Respecto a los datos del día 2020-04-06 en los que existen varias inconsistencias, [wfms](https://www.wfms.org/mx-covid19/) también realiza algunos comentarios al respecto.
+Adicionalmente, identifica los números aleatorios que aparecen en los campos de fechas como errores de "Power Query" de Excel. *Gracias a wfms por sus comentarios.*
+
+2020-04-07: The cases tables from yesterday (2020-04-06) have a different format from those from other days.
 The orthography was changed (accents were ommited), the term "Distrito Federal" (*Federal District*) was used instead of "Ciudad de México" (*Mexico City*), the countries of the cases with history of travel have their names incomplete or used in an inconsistent manner, the date of importation of the case was deleted, among other things.
 Elí Parra ([1](https://twitter.com/elzr/status/1247428446751526913?s=20), [2](https://covidatos.mx/)); Luis G. Canales ([1](https://github.com/LGCO/MEXICO_COVID19_DATA)); Gerardo Mathus ([1](https://covid19.nextia.mx/)); Katia Guzmán Martínez ([1](https://github.com/guzmart/covid19_mex)), among others, have commented on the existence of additional inconsistencies in the data.
 I don't know the reason behind these changes.
@@ -28,6 +31,10 @@ To do the analysis of classifying the positive cases per state as local or impor
 , the keywords in the column ```País_fuente```of the list of positive cases used to classified a case as local are shown
 [here](https://github.com/carranco-sga/Mexico-COVID-19/blob/01a9a953e23c1fa135be3c78e793500604b58eb1/Scraping/csv_daily_scraping.jl#L10).
 *Special thanks to Luis G. Canales and to Luis López Martinelli for their observations.*
+
+2020-04-09, addenda: Regarding the data of the day 2020-04-06 in which several inconsistencies are found, [wfms](https://www.wfms.org/mx-covid19/) also comments about them.
+Additionally, they identify the random numbers that appear on the data fields as errors of "Power Query" of Excel.
+*Thanks wfms for their comments.*
 
 ## Notas/Notes (archivo/archive):
 
@@ -46,7 +53,7 @@ Recovered cases are no longer  provided in the CTD for 2020-03-23 onwards.
 **Nota/Note:**
 2020-04-03: El comunicado técnico diario ya no reporta el número de pruebas de SISVEFLU/IRAG para SARS-CoV-2. Se deja de reportar este dato. El número de pruebas totales consiste en el número de casos positivos más el número de casos negativos.
 
-2020-04-03: The daily technical communiqué no longer reports the number of SISVEFLU/IRAG tests for SARS-CoV-2. This datum will no longer be reported. The number of total tests done consists on the number of total positive cases plus the number of negartive cases.
+2020-04-03: The daily technical communiqué no longer reports the number of SISVEFLU/IRAG tests for SARS-CoV-2. This datum will no longer be reported. The number of total tests done consists on the number of total positive cases plus the number of negative cases.
 
 **Nota/Note:**
 2020-04-04: Algunas de las fechas del inicio de síntomas en las tablas oficiales de **casos sospechosos** son sustituidas por números de forma intermitente desde finales de marzo. Esto es reflejado en los archivos ```.csv``` respectivos. Se desconoce el significado de los mismos. *Gracias a Erik Salgado Estrada por su observación.*
