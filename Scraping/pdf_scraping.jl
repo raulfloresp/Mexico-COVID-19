@@ -43,7 +43,6 @@ function eliminar_nocasos(string)
   return rows
 end
 
-
 function procesa_fecha(string)
   try
     return Dates.format(Date(string, "dd/mm/yyyy"), "yyyy-mm-dd")
@@ -51,7 +50,6 @@ function procesa_fecha(string)
     return ""
   end
 end
-
 
 function procesa_fila(string, index_fechas)
   out = replace(string, r"^\s+" => "")  # espacios al inicio
@@ -170,4 +168,22 @@ end
 
 if abspath(PROGRAM_FILE) == @__FILE__
   main()
+end
+
+#Función que hace el scraping de las dos tablas de datos diarias:
+#fecha en formato "yyyymmdd"
+function daily_scraping(fecha)
+
+  año_mes = fecha[1:6]
+
+  #Casos positivos:
+  scraping("Documents/Tablas casos/$(año_mes)/positivos_$(fecha).pdf")
+  #Casos sospechosos:
+  scraping("Documents/Tablas casos/$(año_mes)/sospechosos_$(fecha).pdf")
+
+  #Mueve los archivos a la carpeta respectiva:
+  mv("Documents/Tablas casos/$(año_mes)/positivos_$(fecha).csv", "Daily data/$(año_mes)/positivos_$(fecha).csv")
+  mv("Documents/Tablas casos/$(año_mes)/sospechosos_$(fecha).csv", "Daily data/$(año_mes)/sospechosos_$(fecha).csv")
+
+  return "Done"
 end
