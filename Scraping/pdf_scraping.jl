@@ -44,9 +44,26 @@ function eliminar_nocasos(string)
 end
 
 function procesa_fecha(string)
-  try
-    return Dates.format(Date(string, "dd/mm/yyyy"), "yyyy-mm-dd")
-  catch e
+
+  longitud_campo = length(string)
+
+  if longitud_campo == 10
+
+    try
+      return Dates.format(Date(string, "dd/mm/yyyy"), "yyyy-mm-dd")
+    catch e
+      return ""
+    end
+
+  elseif longitud_campo == 5
+
+    #https://www.covid19in.mx/docs/datos/tablas-casos/normalizacion/fecha/
+    fecha = Date("1900-01-01") + Day(string) |> Base.string
+
+    return fecha
+
+  else
+
     return ""
   end
 end
