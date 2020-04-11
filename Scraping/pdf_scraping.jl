@@ -57,8 +57,17 @@ function procesa_fecha(string)
 
   elseif longitud_campo == 5
 
+    #Son fechas representadas en un formato de Excel: con el conteo de días iniciando en 1900-01-01. (Día 1)
     #https://www.covid19in.mx/docs/datos/tablas-casos/normalizacion/fecha/
-    fecha = Date("1900-01-01") + Day(string) |> Base.string
+    #Sin embargo, por retrocompatibilidad, se considera erróneamente que 1900 es un año bisiesto,
+    #por lo que para convertir las fechas a partir del 1900-02-28 se requiere restar dos al número mostrado,
+    #una unidad para tener un intervalo de tiempo respecto de 1900-01-01 y otra unidad para corregir por el día
+    #extra considerado.
+    #Gracias a Juan Claudio Toledo Roy por estas correciones.
+
+    Δt = Int64(string) - 2  #Nuestras fechas son posteriores a 1900-02-28.
+
+    fecha = Date("1900-01-01") + Day(Δt) |> Base.string
 
     return fecha
 
