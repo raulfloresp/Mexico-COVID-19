@@ -3,6 +3,33 @@
 Última actualización/Last update: 2020-04-11 T 19:45:00-05:00
 
 **Nota/Note:**
+
+2020-04-11: Gracias a [@rodrigolece](https://github.com/rodrigolece), se modifican ligeramente las tablas de casos sospechosos y positivos en ```.csv``` para homogeneizar los formatos. Esencialmente se hacen los siguientes cambios:
+
+- La columna ```Fecha_regreso``` se renombra a ```Fecha_llegada```.
+- Correcciones de ortografía: "POTOSI => POTOSÍ" en las regiones sanitaria de las tablas que las reportan.
+- Cambio de fechas "NA" a strings vacíos.
+- Cambio de "MASCULINO"/"FEMENINO" a "M"/"F" en las tablas de abril, que corresponde con la forma en las que se reportaban esos datos en las tablas de marzo.
+
+Adicionalmente, mayrop ([1](https://twitter.com/@mayrop), [2](https://www.covid19in.mx/)) [aquí](https://www.covid19in.mx/docs/datos/tablas-casos/normalizacion/fecha/) y Juan Claudio Toledo Roy identifican a los números que aparecen en los campos de fecha son correspondientes a una representación de fechas en Excel en el que el día 1900-01-01 se toma como día 1. [1](https://support.office.com/en-us/article/datevalue-function-df8b07d4-7761-4a93-bc33-b7471bbff252)
+Sin embargo, este formato considera que el año 1900 es bisiesto, por lo que para tranformar adecuadamente las fechas a partir del 1900-02-28, es requerido restar dos días [2](https://docs.microsoft.com/en-us/office/troubleshoot/excel/wrongly-assumes-1900-is-leap-year) para obtener el número correcto de días transcurridos del 1900-01-01.
+*Muchas gracias a mayrop y a Juan Claudio Toledo Roy por sus comentarios sobre las fechas y a rodrigolece por sus mejoras al código de scraping.*
+
+2020-04-11: Thanks to the work of [@rodrigolece](https://github.com/rodrigolece), the format of the positive and suspect cases ```.csv``` tables are modified slightly.
+Essencially, the following changes were made:
+
+- The column ```Fecha_regreso``` was renamed to ```Fecha_llegada```.
+- Orthography corrections: "POTOSI => POTOSÍ" in the sanitary region of the cases in the tables that report them.
+- Changes of the "NA" dates to empty strings.
+- Changed "MASCULINO"/"FEMENINO" to "M"/"F" in the April tables, that is the way that the data was reported in the March tables.
+
+Additionally, mayrop ([1](https://twitter.com/@mayrop), [2](https://www.covid19in.mx/)) [here](https://www.covid19in.mx/docs/datos/tablas-casos/normalizacion/fecha/) and Juan Claudio Toledo Roy identified the numbers appearing in the date fields as a way Excel represents dates, in which the day 1900-01-01 was taken as day 1. [1](https://support.office.com/en-us/article/datevalue-function-df8b07d4-7761-4a93-bc33-b7471bbff252)
+However, this format considers the year 1900 as a leap year, so to transform correctly the dates from 1900-02-28,
+substracting two to the Excel representation gives the number of days between the day represented and 1900-01-01. [2](https://docs.microsoft.com/en-us/office/troubleshoot/excel/wrongly-assumes-1900-is-leap-year)
+*Special thanks to mayrop and to Juan Claudio Toledo Roy for their comments on the dates and to rodrigolece for his  improvement to the scraping code.*
+
+**Nota/Note:**
+
 2020-04-08: Desde hoy aparentemente ya no se va a reportar la procedencia de los casos.
 Ya no se realizará distinción entre casos locales/importados
 
@@ -22,6 +49,9 @@ Para el análisis de separar casos como locales o importados por estado, mostrad
 2020-04-09, addenda: Respecto a los datos del día 2020-04-06 en los que existen varias inconsistencias, [wfms](https://www.wfms.org/mx-covid19/) también realiza algunos comentarios al respecto.
 Adicionalmente, identifica los números aleatorios que aparecen en los campos de fechas como errores de "Power Query" de Excel. *Gracias a wfms por sus comentarios.*
 
+2020-04-11, addenda: Adicionalmente, se me olvidó comentar que hice las siguientes modificaciones a los países de procedencia:
+Reeplacé "Trieste" por "Italia" y "Estados" por "Estados Unidos".
+
 2020-04-07: The cases tables from yesterday (2020-04-06) have a different format from those from other days.
 The orthography was changed (accents were ommited), the term "Distrito Federal" (*Federal District*) was used instead of "Ciudad de México" (*Mexico City*), the countries of the cases with history of travel have their names incomplete or used in an inconsistent manner, the date of importation of the case was deleted, among other things.
 Elí Parra ([1](https://twitter.com/elzr/status/1247428446751526913?s=20), [2](https://covidatos.mx/)); Luis G. Canales ([1](https://github.com/LGCO/MEXICO_COVID19_DATA)); Gerardo Mathus ([1](https://covid19.nextia.mx/)); Katia Guzmán Martínez ([1](https://github.com/guzmart/covid19_mex)), among others, have commented on the existence of additional inconsistencies in the data.
@@ -35,6 +65,9 @@ To do the analysis of classifying the positive cases per state as local or impor
 2020-04-09, addenda: Regarding the data of the day 2020-04-06 in which several inconsistencies are found, [wfms](https://www.wfms.org/mx-covid19/) also comments about them.
 Additionally, they identify the random numbers that appear on the data fields as errors of "Power Query" of Excel.
 *Thanks wfms for their comments.*
+
+2020-04-11, addenda: Additionally, I forgot to comment that I made the following modifications to the countries of procedence:
+I replaced "Trieste" by "Italia" and "Estados" by "Estados Unidos".
 
 ## Notas/Notes (archivo/archive):
 
