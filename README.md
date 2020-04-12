@@ -125,9 +125,17 @@ Una visualización de datos internacional por país por Jason Campos [aquí](htt
 A visualization of international data by country made by Jason Campos [here](https://covid19.jsoncampos.com/).
 
 
-Una visualización de datos nacionales con desglose de casos por edad y sexo realizada por Erik Salgado [aquí](https://covid19.jsoncampos.com/).
+Una visualización de datos nacionales con desglose de casos por edad y sexo realizada por Erik Salgado [aquí](https://www.mappenterprise.net/covid19mapa)
 
-A visualization of national data with some graphs of the cases by age and gender made by Erik Salgad [here](https://covid19.jsoncampos.com/).
+A visualization of national data with some graphs of the cases by age and gender made by Erik Salgado [here](https://www.mappenterprise.net/covid19mapa)
+
+Una visualización de datos interactiva por fecha y con representación de carga de enfermedad realizada por Francisco Leyva [aquí](https://covid19mexico.net/).
+
+An interactive visualization of the data by date and with a graphical representation of the number of cases made by Francisco Leyva [here](https://covid19mexico.net/).
+
+Una animación del número de casos por entidad a forma de carrera, realizada por Hugo Mosh Cardoza [aquí](https://observablehq.com/@hugomosh/progreso-covid-19-mexico)
+
+An animation of the number of cases by state represented as a race, made by Hugo Mosh Cardoza [here](https://observablehq.com/@hugomosh/progreso-covid-19-mexico)
 
 ## Español
 Información de casos de COVID-19 dada a conocer por el Gobierno Federal de México desglosada por entidad.
