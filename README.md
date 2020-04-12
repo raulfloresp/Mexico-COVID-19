@@ -11,8 +11,8 @@
 - Cambio de fechas "NA" a strings vacíos.
 - Cambio de "MASCULINO"/"FEMENINO" a "M"/"F" en las tablas de abril, que corresponde con la forma en las que se reportaban esos datos en las tablas de marzo.
 
-Adicionalmente, mayrop ([1](https://twitter.com/@mayrop), [2](https://www.covid19in.mx/)) [aquí](https://www.covid19in.mx/docs/datos/tablas-casos/normalizacion/fecha/) y Juan Claudio Toledo Roy identifican a los números que aparecen en los campos de fecha son correspondientes a una representación de fechas en Excel en el que el día 1900-01-01 se toma como día 1. [1](https://support.office.com/en-us/article/datevalue-function-df8b07d4-7761-4a93-bc33-b7471bbff252)
-Sin embargo, este formato considera que el año 1900 es bisiesto, por lo que para tranformar adecuadamente las fechas a partir del 1900-02-28, es requerido restar dos días [2](https://docs.microsoft.com/en-us/office/troubleshoot/excel/wrongly-assumes-1900-is-leap-year) para obtener el número correcto de días transcurridos del 1900-01-01.
+Adicionalmente, mayrop ([1](https://twitter.com/@mayrop), [2](https://www.covid19in.mx/)) [aquí](https://www.covid19in.mx/docs/datos/tablas-casos/normalizacion/fecha/) y Juan Claudio Toledo Roy identifican a los números que aparecen en los campos de fecha son correspondientes a una representación de fechas en Excel en el que el día 1900-01-01 se toma como día 1. ([1](https://support.office.com/en-us/article/datevalue-function-df8b07d4-7761-4a93-bc33-b7471bbff252))
+Sin embargo, este formato considera que el año 1900 es bisiesto, por lo que para tranformar adecuadamente las fechas a partir del 1900-02-28, es requerido restar dos días ([2](https://docs.microsoft.com/en-us/office/troubleshoot/excel/wrongly-assumes-1900-is-leap-year)) para obtener el número correcto de días transcurridos del 1900-01-01.
 *Muchas gracias a mayrop y a Juan Claudio Toledo Roy por sus comentarios sobre las fechas y a rodrigolece por sus mejoras al código de scraping.*
 
 2020-04-11: Thanks to the work of [@rodrigolece](https://github.com/rodrigolece), the format of the positive and suspect cases ```.csv``` tables are modified slightly.
