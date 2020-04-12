@@ -65,7 +65,7 @@ function procesa_fecha(string)
     #extra considerado.
     #Gracias a Juan Claudio Toledo Roy por estas correciones.
 
-    Δt = Int64(string) - 2  #Nuestras fechas son posteriores a 1900-02-28.
+    Δt = parse(Int, string) - 2  #Nuestras fechas son posteriores a 1900-02-28.
 
     fecha = Date("1900-01-01") + Day(Δt) |> Base.string
 
